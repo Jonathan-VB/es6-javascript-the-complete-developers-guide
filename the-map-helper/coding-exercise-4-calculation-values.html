@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Coding Exercise 4: Calculating Values with Map</title>
+  <meta name="description" content="Coding Exercise 4: Calculating Values with Map">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Coding Exercise 4: Calculating Values with Map</h1>
+  <p>Implement a 'pluck' function.  Pluck should accept an array and a string representing a property name and return an array containing that property from each object.</p>
+  <p>Check the console logs!</p>
+
+  <script>
+    // Provided.
+    var paints = [ { color: 'red' }, { color: 'blue' }, { color: 'yellow' }];
+
+    // Solution.
+    function pluck(array, property) {
+      var properties = [];
+
+      array.map(function(thing) {
+        properties.push(thing[property]);
+      });
+
+      return properties;
+    }
+
+    // Provided.
+    console.log(pluck(paints, 'color')); // returns ['red', 'yellow', 'blue'];
+  </script>
+</body>
+</html>
