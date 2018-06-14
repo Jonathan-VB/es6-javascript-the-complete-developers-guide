@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Map Helper Continued</title>
+  <meta name="description" content="Map Helper Continued">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Map Helper Continued</h1>
+  <p>Section 3, Lecture 8</p>
+  <p>Check the console logs!</p>
+
+  <script>
+    var cars = [
+      { model: 'Buick', price: 'Cheap' },
+      { model: 'Camaro', price: 'Expensive' }
+    ];
+
+    var prices = cars.map(function(car) {
+      return car.price;
+    });
+
+    console.log(prices);
+  </script>
+</body>
+</html>
