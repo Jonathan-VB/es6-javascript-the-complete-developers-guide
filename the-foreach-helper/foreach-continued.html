@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>forEach Continued</title>
+  <meta name="description" content="forEach Continued">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>forEach Continued</h1>
+  <p>Section 2, Lecture 5</p>
+  <p>Check the console logs!</p>
+
+  <script>
+    // 1. Create an array of numbers.
+    var numbers = [1, 2, 3, 4, 5];
+
+    // 2. Create a variable to hold the sum.
+    var sum = 0;
+
+    // 3.a Loop over the array, incrementing the sum variable.
+    // numbers.forEach(function(number) {
+    //   sum += number;
+    // });
+
+    // 3.b Loop over the array, incrementing the sum variable but
+    // a function gets referenced in the forEach
+    function adder(number) {
+      sum += number;
+    }
+    numbers.forEach(adder);
+
+    // 4. print the sum variable.
+    console.log(sum);
+  </script>
+</body>
+</html>
