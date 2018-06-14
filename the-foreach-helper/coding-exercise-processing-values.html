@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Coding Exercise 2: Processing Values</title>
+  <meta name="description" content="Coding Exercise 2: Processing Values">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Coding Exercise 2: Processing Values</h1>
+  <p>The array below contains an array of objects, each of which is a representation of an image.  Using the forEach helper, calculate the area of each image and store it in a new array called 'areas'.  The area of an image can be calculated as 'image.height * image.width'.</p>
+  <p>Check the console logs!</p>
+
+  <script>
+    // Code provided.
+    var images = [
+      { height: 10, width: 30 },
+      { height: 20, width: 90 },
+      { height: 54, width: 32 }
+    ];
+    var areas = [];
+
+    // Solution.
+    function calculate(image) {
+      areas.push(image.height * image.width);
+    }
+
+    images.forEach(calculate);
+  </script>
+</body>
+</html>
