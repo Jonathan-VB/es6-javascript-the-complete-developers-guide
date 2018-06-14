@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The Map Helper</title>
+  <meta name="description" content="The Map Helper">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>The Map Helper</h1>
+  <p>Section 3, Lecture 7</p>
+  <p>Check the console logs!</p>
+
+  <script>
+    var numbers = [1, 2, 3,];
+    var doubledNumbers = [];
+
+    // Old for loop.
+    for( var i = 0; i < numbers.length; i++ ) {
+      doubledNumbers.push(numbers[i] * 2);
+    }
+
+  // New map helper.
+    var doubled = numbers.map(function(number) {
+      return number * 2;
+    })
+
+    console.log(doubledNumbers);
+    console.log(doubled);
+  </script>
+</body>
+</html>
