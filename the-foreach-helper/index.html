@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The forEach Helper</title>
+  <meta name="description" content="The forEach Helper">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>The forEach Helper</h1>
+  <p>Section 2, Lecture 4</p>
+  <p>Check the console logs!</p>
+
+  <script>
+    var colors = [ 'red', 'blue', 'green' ];
+
+    // Old, icky for loop.
+    for( var i = 0; i < colors.length; i++) {
+      console.log(colors[i]);
+    }
+
+    // New, shiny forEach helper!
+    colors.forEach(function(color) {
+      console.log(color);
+    });
+  </script>
+</body>
+</html>
