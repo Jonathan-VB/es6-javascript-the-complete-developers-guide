@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Coding Exercise 3: Plucking Values</title>
+  <meta name="description" content="Coding Exercise 3: Plucking Values">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Coding Exercise 3: Plucking Values</h1>
+  <p>Using map, create a new array that contains the 'height' property of each object.  Assign this new array to the variable 'heights'.  Don't forget to use the 'return' keyword in the function!</p>
+  <p>Check the console logs!</p>
+
+  <script>
+  // Code provided.
+    var images = [
+      { height: '34px', width: '39px' },
+      { height: '54px', width: '19px' },
+      { height: '83px', width: '75px' },
+    ];
+
+    // Solution.
+    var heights = images.map(function(image) {
+      return image.height;
+    });
+  </script>
+</body>
+</html>
