@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Choosing When to Filter</title>
+  <meta name="description" content="Choosing When to Filter">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Choosing When to Filter</h1>
+  <p>Section 4, Lecture 12</p>
+  <p>Check the console logs!</p>
+
+  <script>
+    var post = { id: 4, title: 'New Post' };
+    var comments = [
+      { postId: 4, content: 'awesome post' },
+      { postId: 3, content: 'it was ok' },
+      { postId: 4, content: 'neat' }
+    ];
+
+    function commentsForPost(post, comments) {
+      return comments.filter(function(comment) {
+        return comment.postId === post.id;
+      });
+    }
+
+    console.log(commentsForPost(post, comments));
+  </script>
+</body>
+</html>
