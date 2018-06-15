@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Coding Exercise 7: Handling Permissions with Filter</title>
+  <meta name="description" content="Coding Exercise 7: Handling Permissions with Filter">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Coding Exercise 7: Handling Permissions with Filter</h1>
+  <p>Filter the array of users, only returning users who have admin level access.  Assign the result to the variable 'filteredUsers'. Don't forget to use the 'return' keyword in the function!</p>
+  <p>Check the console logs!</p>
+
+  <script>
+    // Provided.
+    var users = [
+      { id: 1, admin: true },
+      { id: 2, admin: false },
+      { id: 3, admin: false },
+      { id: 4, admin: false },
+      { id: 5, admin: true },
+    ];
+
+    // Solution
+    var filteredUsers = users.filter(function(user) {
+      return user.admin === true;
+    });
+  </script>
+</body>
+</html>
