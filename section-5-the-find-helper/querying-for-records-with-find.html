@@ -13,7 +13,25 @@
   <p>Check the console logs!</p>
 
   <script>
-    
+  var users = [
+    { name: 'Jill' },
+    { name: 'Alex' },
+    { name: 'Bill' }
+  ];
+  var user;
+
+  // Old way of finding a record
+  for(var i = 0; i < users.length; i++) {
+    if(users[i].name === 'Alex') {
+      user = users[i];
+    }
+  }
+  console.log(user);
+
+  // Better way!
+  users.find(function(user) {
+    return user.name === 'Alex'; // Must use 'return' or the iterator function will output nothing
+  });
   </script>
 </body>
 </html>
