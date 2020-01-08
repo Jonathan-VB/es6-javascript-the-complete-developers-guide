@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Coding Exercise 9: Finding Admin Users</title>
+  <meta name="description" content="Coding Exercise 9: Finding Admin Users">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Coding Exercise 9: Finding Admin Users</h1>
+  <p>Find the user in the users's array who is an admin.  Assign this user to the variable 'admin'.</p>
+  <p>Check the console logs!</p>
+
+  <script>
+    // Provided.
+    var users = [
+      { id: 1, admin: false },
+      { id: 2, admin: false },
+      { id: 3, admin: true }
+    ];
+
+    var admin;
+
+    // Solution
+    var admin = users.find(user => user.admin);
+    console.log(admin);
+
+  </script>
+</body>
+</html>
