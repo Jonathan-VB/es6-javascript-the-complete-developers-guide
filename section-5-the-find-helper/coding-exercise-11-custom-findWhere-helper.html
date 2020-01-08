@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Coding Exercise 11: Really Challenging: Custom findWhere Helper</title>
+  <meta name="description" content="Coding Exercise 11: Really Challenging: Custom findWhere Helper">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Coding Exercise 11: Really Challenging: Custom findWhere Helper</h1>
+  <p>This is a tough one! The most common find operation is to an object that has a given property. Rather than writing out a full function every time, it would be great if we has a shorthand syntax to find an object.</p>
+  <p>Your goal: Write a 'findWhere' function that achieves this shorthand approach. 'findWhere' should return the found object.</p>
+  <p>Check the console logs!</p>
+
+  <script>
+    // Provided.
+    var ladders = [
+      { id: 1, height: 20 },
+      { id: 3, height: 25 }
+    ];
+
+    findWhere(ladders, { height: 25 });
+
+    function findWhere(array, criteria) {
+
+    }
+
+    // Solution
+    var ladders = [
+      { id: 1, height: 20 },
+      { id: 3, height: 25 }
+    ];
+
+    console.log(findWhere(ladders, { height: 25 }));
+
+    function findWhere(array, criteria) {
+      let property = Object.keys(criteria)[0];
+
+      return array.find(arr => {
+          return arr[property] === criteria[property];
+      });
+    }
+
+  </script>
+</body>
+</html>
