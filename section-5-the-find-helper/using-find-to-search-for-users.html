@@ -12,7 +12,18 @@
   <p>Check the console logs!</p>
 
   <script>
+    const posts = [
+      { id: 1, title: 'Post title' },
+      { id: 4, title: 'Post title' },
+      { id: 9, title: 'Post title' },
+      { id: 24, title: 'Post title' },
+      { id: 36, title: 'Post title' },
+      { id: 45, title: 'Post title' },
+  ];
 
+  const postId = getIdFromURL(); // Get post ID from page URL (Ex: 45)
+
+  posts.find(post => post.id === postId) // Outputs post with ID 45
   </script>
 </body>
 </html>
