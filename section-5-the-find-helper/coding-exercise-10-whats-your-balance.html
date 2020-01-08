@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Coding Exercise 10: What's Your Balance?</title>
+  <meta name="description" content="Coding Exercise 10: What's Your Balance?">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Coding Exercise 10: What's Your Balance?</h1>
+  <p>Find the account with a balance of 12 and assign it to the variable 'account'.</p>
+  <p>Check the console logs!</p>
+
+  <script>
+    // Provided.
+    var accounts = [
+      { balance: -10 },
+      { balance: 12 },
+      { balance: 0 }
+    ];
+
+    var account;
+
+    // Solution
+    var account = accounts.find(function(account) {
+      return account.balance == 12;
+    });
+    console.log(account);
+
+  </script>
+</body>
+</html>
