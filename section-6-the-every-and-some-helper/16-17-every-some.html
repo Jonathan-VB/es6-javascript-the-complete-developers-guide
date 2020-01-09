@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>A Little Every and a Lot of Some</title>
+  <meta name="description" content="A Little Every and a Lot of Some">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>A Little Every and a Lot of Some</h1>
+  <p>Section 6, Lecture 16</p>
+  <p>Check the console logs!</p>
+
+  <script>
+    var computers = [
+        { name: 'Apple', ram: 24 },
+        { name: 'Compaq', ram: 4 },
+        { name: 'Acer', ram: 32 }
+    ];
+
+    var allComputersCanRunProgram = true;
+    var onlySomeComputersCanRunProgram = false;
+
+    // We want to check if we have computers in the array that have over 16G of ram.
+    // If any of the computers have less than 16 then we switch our default booleans.
+    // Old way
+    for(var i = 0; i < computers.length; i++) {
+        var computer = computers[i];
+
+        if(computer.ram < 16 ) {
+            var allComputersCanRunProgram = false;
+        } else {
+            onlySomeComputersCanRunProgram = true;
+        }
+    }
+
+    // Every helper.
+    // Returns a single boolean. If any of the results are false then the return is false.
+    var every = computers.every(function(computer) {
+        return computer.ram > 16; // One result is false so every computer CANNOT run the program.
+    })
+
+    // Some helper
+    // Returns a single boolean. If any of the results are true then the return is true
+    var some = computers.some(function(computer) {
+        return computer.ram > 16; // One result is true so some one or some of the computers CAN run the program.
+    })
+
+    console.log(every, some);
+  </script>
+</body>
+</html>
