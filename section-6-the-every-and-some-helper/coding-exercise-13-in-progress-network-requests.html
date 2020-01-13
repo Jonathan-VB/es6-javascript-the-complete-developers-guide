@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Coding Exercise 13: In Progress Network Requests</title>
+  <meta name="description" content="Coding Exercise 13: In Progress Network Requests">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Coding Exercise 13: In Progress Network Requests</h1>
+  <p>Given an array of network objects representing network requests, assign the boolean 'true' to the variable 'inProgress' if any network request has a 'status' of 'pending'.</p>
+  <p>Check the console logs!</p>
+
+  <script>
+    // Provided.
+    var requests = [
+      { url: '/photos', status: 'complete' },
+      { url: '/albums', status: 'pending' },
+      { url: '/users', status: 'failed' }
+    ];
+
+    var inProgress
+
+    // Solution
+    var inProgress = requests.some(function(request) {
+      return request.status == 'pending';
+    });
+
+  </script>
+</body>
+</html>
