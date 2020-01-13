@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>19. Every and Some in Practice</title>
+  <meta name="description" content="19. Every and Some in Practice">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Every and Some in Practice</h1>
+  <p>Section 6, Lecture 19</p>
+  <p>Check the console logs!</p>
+
+  <script>
+  // Create a field class
+  function Field(value) {
+    this.value = value;
+  }
+
+  // Validate if a field has more than 0 chars
+  Field.prototype.validate = function() {
+    return this.value.length > 0;
+  }
+
+  // Dummy input fields with content
+  var username = new Field("2cool");
+  var password = new Field("my_password");
+  var birthdate = new Field("10/10/2010");
+
+  // Add our fields into an array.
+  var fields = [username, password, birthdate];
+
+  // Validate all fields in array!
+  var formIsValid = fields.every(function(field) {
+    return field.validate();
+  });
+
+  if (formIsValid) {
+    // allow user to submit
+  } else {
+    // show an error
+  }
+
+  console.log(formIsValid);
+
+  </script>
+</body>
+</html>
