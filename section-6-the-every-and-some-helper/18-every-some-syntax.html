@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Every and Some Syntax</title>
+  <meta name="description" content="Every and Some Syntax">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Every and Some Syntax</h1>
+  <p>Section 6, Lecture 18</p>
+  <p>Check the console logs!</p>
+
+  <script>
+  var names = [
+    "Alexandria",
+    "Matthew",
+    "Joe"
+  ];
+
+  var allGreaterThanFour;
+  var someGreaterThanFour;
+
+  var allGreaterThanFour = names.every(function(name) {
+    return name.length > 4; // false - all names are NOT greater than 4 chars.
+  });
+  console.log("Are all greater than four? " + allGreaterThanFour);
+
+  var someGreaterThanFour = names.some(function(name) {
+    return name.length > 4; // true - some names are greater than 4 chars.
+  });
+  console.log("Are some greater than four? " + someGreaterThanFour);
+  </script>
+</body>
+</html>
