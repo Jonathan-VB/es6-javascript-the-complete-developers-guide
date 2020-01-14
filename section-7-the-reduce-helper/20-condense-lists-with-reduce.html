@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>20. Condensing Lists with Reduce</title>
+  <meta name="description" content="20. Condensing Lists with Reduce">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Condensing Lists with Reduce</h1>
+  <p>Section 7, Lecture 20</p>
+  <p>Check the console logs!</p>
+
+  <script>
+  var numbers = [10, 20, 30];
+  var sum = 0;
+
+  // Old way
+  for(var i = 0; i < numbers.length; i++) {
+    sum += numbers[i]; // returns 60
+  }
+
+  // Reduce
+  // sum = 0
+  // number = item in numbers array
+  numbers.reduce(function(sum, number) {
+    return sum + number; // returns 60
+  }, 0);
+  </script>
+</body>
+</html>
