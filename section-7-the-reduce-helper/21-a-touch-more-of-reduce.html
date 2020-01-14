@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>21. A Touch More of Reduce</title>
+  <meta name="description" content="21. A Touch More of Reduce">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>A Touch More of Reduce</h1>
+  <p>Section 7, Lecture 21</p>
+  <p>Check the console logs!</p>
+
+  <script>
+  var primaryColors = [
+    { color: 'red' },
+    { color: 'yellow' },
+    { color: 'blue' }
+  ];
+
+  // previous = array
+  var array = primaryColors.reduce(function(previous, primaryColor) {
+    previous.push(primaryColor.color); // Add the color string to the previous array
+
+    return previous; // ALWAYS RETURN!
+  }, []);
+
+  console.log(array);
+  </script>
+</body>
+</html>
