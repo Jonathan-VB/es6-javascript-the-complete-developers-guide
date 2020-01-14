@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>22. Ace Your Next Interview with Reduce</title>
+  <meta name="description" content="22. Ace Your Next Interview with Reduce">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Ace Your Next Interview with Reduce</h1>
+  <p>Section 7, Lecture 22</p>
+  <p>Check the console logs! Is the string correctly balanced?</p>
+
+  <script>
+  // If previous does NOT equal zero then the string is not balanced.
+  // ! to flip the boolean
+  function balancedParens(string) {
+    return !string.split('').reduce(function(previous, char) { // Turn the string into an array of empty characters nd chain our reduce function on the end.
+      if(previous < 0) { return previous; } // Check if the parens are in an incorrect order Ie. )(
+      if(char === "(") { return ++previous; } // add 1 if open paren
+      if(char === ")") { return --previous; } // subtract 1 if closed paren
+      return previous; // return if neither open/close paren was encountered
+    }, 0);
+  }
+  console.log(balancedParens("(((())))"));
+  </script>
+</body>
+</html>
