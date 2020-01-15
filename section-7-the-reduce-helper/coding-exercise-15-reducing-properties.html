@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Coding Exercise 15: Reducing Properties</title>
+  <meta name="description" content="Coding Exercise 15: Reducing Properties">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Coding Exercise 15: Reducing Properties</h1>
+  <p>Use the 'reduce' helper to create an object that tallies the number of sitting and standing desks.  The object returned should have the form '{ sitting: 3, standing: 2 }'. The initial value has been provided to you.</p>
+  <p>Check the console logs!</p>
+
+  <script>
+    // Provided.
+    var desks = [
+      { type: 'sitting' },
+      { type: 'standing' },
+      { type: 'sitting' },
+      { type: 'sitting' },
+      { type: 'standing' }
+    ];
+
+    // Solution
+    var deskTypes = desks.reduce(function(previous, desk) {
+      if(desk.type === 'sitting') { ++previous.sitting; }
+      if(desk.type === 'standing') { ++previous.standing; }
+      return previous;
+    }, { sitting: 0, standing: 0 });
+
+  </script>
+</body>
+</html>
