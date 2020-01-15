@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Coding Exercise 16: Hardmode: Custom 'Unique' Helper</title>
+  <meta name="description" content="Coding Exercise 16: Hardmode: Custom 'Unique' Helper">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Coding Exercise 16: Hardmode: Custom 'Unique' Helper</h1>
+  <p>Another really hard one! Write a function called 'unique' that will remove all the duplicate values from an array.</p>
+  <p>Check the console logs!</p>
+
+  <script>
+    // Provided.
+    var numbers = [1, 1, 2, 3, 4, 4];
+    console.log(unique(numbers));
+
+    // Solution
+    function unique(array) {
+      // iterate through array
+      return array.reduce(function(previous,number){
+        // check if number coming into array exists previously in the previous,
+        // and if so do nothing, if not add to previous
+        previous.find(previousValue => number === previousValue) ? previous : previous.push(number);
+
+        return previous;
+      },[]);
+    }
+
+  </script>
+</body>
+</html>
