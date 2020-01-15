@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Coding Exercise 14: Distance Traveled</title>
+  <meta name="description" content="Coding Exercise 14: Distance Traveled">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Coding Exercise 14: Distance Traveled</h1>
+  <p>Use the 'reduce' helper to find the sum of all the distances traveled. Assign the result to the variable 'totalDistance'</p>
+  <p>Check the console logs!</p>
+
+  <script>
+    // Provided.
+    var trips = [{ distance: 34 }, { distance: 12 } , { distance: 1 }];
+    var totalDistance
+
+    // Solution
+    totalDistance = trips.reduce(function(previous, trip) {
+      return previous + trip.distance
+    }, 0);
+
+    console.log(totalDistance);
+
+  </script>
+</body>
+</html>
