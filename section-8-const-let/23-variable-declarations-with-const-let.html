@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>23. Variable Declarations with Const and Let</title>
+  <meta name="description" content="23. Variable Declarations with Const and Let">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Variable Declarations with Const and Let</h1>
+  <p>Section 8, Lecture 23</p>
+  <p>Check the console logs! Is the string correctly balanced?</p>
+
+  <script>
+  // const = Value never changes
+  // let = We expect the value to change over time
+
+  // Old way
+  // var name = 'Jane';
+  // var title = 'Software Engineer';
+  // var hourlyWage = 40;
+
+  // ES6
+  const name = 'Jane'; // Employee's name will not change
+  let title = 'Software Engineer'; // We expect that an employee may get promoted and their title will change.
+  let hourlyWage = 40; // We can expect an employees wage to change over time.
+
+  // Some time later...
+  title = 'Senior Software Engineer'; // We dont need to say 'let' again as it was declared earlier
+  hourlyWage = 45;
+
+  </script>
+</body>
+</html>
