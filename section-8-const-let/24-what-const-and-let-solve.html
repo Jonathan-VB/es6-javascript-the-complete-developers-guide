@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>24. What Const and Let Solve</title>
+  <meta name="description" content="24. What Const and Let Solve">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>What Const and Let Solve</h1>
+  <p>Section 8, Lecture 24</p>
+  <p>Check the console logs! Is the string correctly balanced?</p>
+
+  <script>
+  // Old, nasty code
+  function count(targetString) {
+    var characters = ['a', 'e', 'i', 'o', 'u'];
+    var numbers = 0;
+
+    for(var i = 0; i < targetString.length; i++) {
+      if(characters.includes(targetString[i])) {
+        number++;
+      }
+    }
+
+    return number;
+  }
+
+  // New, shiny code!
+  function count(targetString) {
+    // At a glance we can see that characters[] will not change in the function
+    // and that the number variable will change.
+    const characters = ['a', 'e', 'i', 'o', 'u'];
+    let number = 0;
+
+    for(var i = 0; i < targetString.length; i++) {
+      if(characters.includes(targetString[i])) {
+        number++;
+      }
+    }
+
+    return number;
+  }
+
+  count('aeiobzxceiaipbiox');
+  </script>
+</body>
+</html>
