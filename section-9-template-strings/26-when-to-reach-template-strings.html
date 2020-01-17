@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>26. When to Reach for Template Strings</title>
+  <meta name="description" content="26. When to Reach for Template Strings">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>When to Reach for Template Strings</h1>
+  <p>Section 9, Lecture 26</p>
+  <p>Check the console logs!</p>
+
+  <script>
+  // PHP
+  // $data ='{"device_id":"' . $device_id .'","guid":"' . $guid .'","username":"' . $username .'"}';
+
+  const device_id = 4;
+  const guid = 20;
+  const username = "hello";
+
+  // ES5
+  data = '{"device_id":"' + device_id + '","guid":"' + guid + '","username":"' + username + '"}';
+  console.log(data);
+
+  // ES6
+  dataES6 = `{"device_id":"${device_id}", "guid":"${guid}", "username":"${username}"}`;
+  console.log(dataES6);
+  </script>
+</body>
+</html>
