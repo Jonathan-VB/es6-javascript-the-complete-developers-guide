@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>25. Template Strings</title>
+  <meta name="description" content="25. Template Strings">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Template Strings</h1>
+  <p>Section 9, Lecture 25</p>
+  <p>Check the console logs!</p>
+
+  <script>
+  // ES5
+  function getMessage() {
+    const year = new Date().getFullYear();
+
+    return "The year is " + year;
+  }
+  console.log(getMessage());
+
+  // ES6
+  function getMessageES6() {
+    const year = new Date().getFullYear();
+
+    return `The year is ${year}`;
+  }
+  console.log(getMessageES6());
+  </script>
+</body>
+</html>
