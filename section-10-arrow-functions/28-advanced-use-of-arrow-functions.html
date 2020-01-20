@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>28. Advanced Use of Arrow Functions</title>
+  <meta name="description" content="28. Advanced Use of Arrow Functions">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Advanced Use of Arrow Functions</h1>
+  <p>Section 10, Lecture 28</p>
+  <p>Check the console logs!</p>
+
+  <script>
+  // ES5
+  const double = function(number) {
+    return 2 * number;
+  };
+
+  // If we have a single argument we can remove the brackets around it
+  const double = number => return 2 * number;
+
+  // If we have no arguements, we still need to use brackets where the arguement would be
+  const double = () => return 2;
+
+  console.log(double(8));
+
+
+  // ES5
+  const numbers = [1, 2, 3];
+  numbers.map(function(number) {
+    return 2 * number;
+  });
+
+  //ES6
+  // Use fat arrow, remove curly braces, remove semicolon from '2 * number;', remove braces from (number)
+  const numbers = [1, 2, 3];
+  numbers.map(number => return 2 * number);
+  </script>
+</body>
+</html>
