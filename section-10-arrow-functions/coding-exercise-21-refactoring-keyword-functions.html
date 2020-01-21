@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Coding Exercise 21: Refactoring Keyword Functions</title>
+  <meta name="description" content="Coding Exercise 21: Refactoring Keyword Functions">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Coding Exercise 21: Refactoring Keyword Functions</h1>
+  <p>Refactor the function to use template strings</p>
+  <p>Check the console logs!</p>
+
+  <script>
+    // Provided.
+    const fibonacci = function(n) {
+      if (n < 3) return 1;
+      return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+
+    // Solution
+    const fibonacci = n => (n < 3)  ?  1 : fibonacci(n - 1) + fibonacci(n - 2) ;
+
+  </script>
+</body>
+</html>
