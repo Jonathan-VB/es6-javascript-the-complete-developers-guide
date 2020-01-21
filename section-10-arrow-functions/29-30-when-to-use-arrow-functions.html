@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>29. & 30. When to Use Arrow Functions</title>
+  <meta name="description" content="29. & 30 When to Use Arrow Functions">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>When to Use Arrow Functions</h1>
+  <p>Section 10, Lecture 29 and 30</p>
+  <p>Check the console logs!</p>
+
+  <script>
+  // console log error - teamName is undefined
+  // this is refering to members.map but we want it to refer to team
+  // const team = {
+  //   members: ['Jane', 'Bill'],
+  //   teamName: ' Super Squad',
+  //   teamSummary: function() {
+  //     return this.members.map(function(member) {
+  //       return `${member} is on team ${this.teamName}`;
+  //     });
+  //   }
+  // };
+
+  // with fat arrow function, the issue is fixed!
+  // Arrow functions implement "Lexical this" - Depending on the use of 'this', it will change when you use a fat arrow function.
+  // In this example - the arrow function makes this === team.
+  const team = {
+    members: ['Jane', 'Bill'],
+    teamName: ' Super Squad',
+    teamSummary: function() {
+      return this.members.map((member) => {
+        return `${member} is on team ${this.teamName}`;
+      });
+    }
+  };
+
+  console.log(team.teamSummary());
+  </script>
+</body>
+</html>
