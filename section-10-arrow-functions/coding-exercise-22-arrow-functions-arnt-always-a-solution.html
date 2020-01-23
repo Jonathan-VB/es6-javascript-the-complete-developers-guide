@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Coding Exercise 22: Arrow Functions Aren't Always a Solution</title>
+  <meta name="description" content="Coding Exercise 22: Arrow Functions Aren't Always a Solution">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Coding Exercise 22: Arrow Functions Aren't Always a Solution</h1>
+  <p>Arrow functions bind the value of 'this' to the surrounding context, and sometimes this isn't the behavior we expect.  The code below has an object that represents a users profile.  The profile has a 'name' currently.  Add another key to this object called 'getName'.  'getName' should be a function that returns the profiles name, using 'this.name'.  Does the solution work with a fat arrow function or will you have to use a function keyword instead?</p>
+  <p>Check the console logs!</p>
+
+  <script>
+    // Provided.
+    const profile = {
+      name: 'Alex'
+    };
+
+    // Solution
+    const profile = {
+      name: 'Alex',
+      getName: function() {
+        return this.name;
+      }
+    };
+
+  </script>
+</body>
+</html>
