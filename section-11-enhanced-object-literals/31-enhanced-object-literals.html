@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>31. Enhanced Object Literals</title>
+  <meta name="description" content="31. Enhanced Object Literals">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Enhanced Object Literals</h1>
+  <p>Section 11, Lecture 31</p>
+  <p>Check the console logs!</p>
+
+  <script>
+  // ES5
+  function createBookShop(inventory) {
+    return {
+      inventory: inventory,
+      inventoryValue: function() {
+        return this.inventory.reduce((total, book) => total + book.price, 0);
+      },
+      priceForTitle: function(title) {
+        return this.inventory.find(book => book.title === title).price;
+      }
+    }
+  }
+
+  const inventory = [
+    { title: 'Harry Potter', price: 10 },
+    { title: 'Eloquent JavaScript', price: 15 }
+  ];
+
+  const bookShop = createBookShop(inventory);
+
+  console.log(bookShop.inventoryValue());
+  console.log(bookShop.priceForTitle('Harry Potter'));
+  </script>
+</body>
+</html>
