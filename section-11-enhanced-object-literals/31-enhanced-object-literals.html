@@ -14,13 +14,26 @@
 
   <script>
   // ES5
+  // function createBookShop(inventory) {
+  //   return {
+  //     inventory: inventory,
+  //     inventoryValue: function() {
+  //       return this.inventory.reduce((total, book) => total + book.price, 0);
+  //     },
+  //     priceForTitle: function(title) {
+  //       return this.inventory.find(book => book.title === title).price;
+  //     }
+  //   }
+  // }
+
+  // ES6
   function createBookShop(inventory) {
     return {
-      inventory: inventory,
-      inventoryValue: function() {
+      inventory, // If the value and key are the same, you dont need to duplicate it
+      inventoryValue() { // If we have a key/value pair where value is a function, we can get rid of 'function' and the colon
         return this.inventory.reduce((total, book) => total + book.price, 0);
       },
-      priceForTitle: function(title) {
+      priceForTitle(title) {
         return this.inventory.find(book => book.title === title).price;
       }
     }
