@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>32. Wondering When to Use Enhanced Literals?</title>
+  <meta name="description" content="32. Wondering When to Use Enhanced Literals?">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Wondering When to Use Enhanced Literals?</h1>
+  <p>Section 11, Lecture 32</p>
+  <p>Check the console logs!</p>
+
+  <script>
+  // ES5
+  // function saveFile() {
+  //   $.ajax({
+  //     method: 'POST',
+  //     url: url,
+  //     data: data
+  //   });
+  // }
+
+  //ES6
+  // Key/value pairs with same names can be reduced.
+  // Put the duplicate key/value pairs first.
+  function saveFile() {
+    $.ajax({
+      url,
+      data,
+      method: 'POST',
+    });
+  }
+
+  const url = "https://fileupload.com";
+  const data = { color: 'red' };
+
+  saveFile(url, data);
+  </script>
+</body>
+</html>
