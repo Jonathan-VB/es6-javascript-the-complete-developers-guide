@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Coding Exercise 25: Literals in Functions</title>
+  <meta name="description" content="Coding Exercise 25: Literals in Functions">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Coding Exercise 25: Literals in Functions</h1>
+  <p>Refactor to use enhanced literal notation</p>
+  <p>Check the console logs!</p>
+
+  <script>
+    // Provided.
+    const canvasDimensions = function(width, initialHeight) {
+      const height = initialHeight * 9 /16;
+      return {
+        width: width,
+        height: height
+      };
+    }
+
+    // Solution
+    const canvasDimensions = function(width, initialHeight) {
+      const height = initialHeight * 9 /16;
+      return {
+        width,
+        height 
+      };
+    }
+
+  </script>
+</body>
+</html>
