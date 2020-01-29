@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Coding Exercise 26: Refactor to use enhanced literal notation</title>
+  <meta name="description" content="Coding Exercise 26: Refactor to use enhanced literal notation">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Coding Exercise 26: Refactor to use enhanced literal notation</h1>
+  <p>Refactor to use enhanced literal notation</p>
+  <p>Check the console logs!</p>
+
+  <script>
+    // Provided.
+    const color = 'red';
+
+    const Car = {
+      color: color,
+      drive: function() {
+        return 'Vroom!';
+      },
+      getColor: function() {
+        return this.color;
+      }
+    };
+
+    // Solution
+    const Car = {
+      color: color,
+      drive() {
+        return 'Vroom!';
+      },
+      getColor() {
+        return this.color;
+      }
+    };
+
+  </script>
+</body>
+</html>
