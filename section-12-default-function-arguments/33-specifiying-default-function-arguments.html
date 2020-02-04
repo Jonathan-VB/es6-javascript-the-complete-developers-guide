@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>33. Specifying Default Function Arguments</title>
+  <meta name="description" content="33. Specifying Default Function Arguments">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Specifying Default Function Arguments</h1>
+  <p>Section 12, Lecture 33</p>
+  <p>Check the console logs!</p>
+
+  <script>
+  // ES5
+  function makeAjaxRequest(url, method) {
+    if(!method) {
+      method = 'GET';
+    }
+
+    // logic to make request
+  }
+
+  // If method is undefined, it will default to 'GET'
+  function makeAjaxRequest(url, method = 'GET') {
+    return method;
+    // logic to make request
+  }
+  console.log(makeAjaxRequest('google.com')); // method = 'GET'
+  console.log(makeAjaxRequest('google.com', 'POST')); // method = 'POST'
+  </script>
+</body>
+</html>
