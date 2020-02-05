@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Coding Exercise 27: Using Default Arguments</title>
+  <meta name="description" content="Coding Exercise 27: Using Default Arguments">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Coding Exercise 27: Using Default Arguments</h1>
+  <p>Refactor the following code to use default function arguments. Be sure to remove any unused code after you refactor it.</p>
+  <p>Check the console logs!</p>
+
+  <script>
+    // Provided.
+    function sum(a, b) {
+      if (a === undefined) {
+        a = 0;
+      }
+
+      if (b === undefined) {
+        b = 0;
+      }
+
+      return a + b;
+    }
+
+    // Solution
+    function sum(a = 0, b = 0) {
+      return a + b;
+    }
+
+  </script>
+</body>
+</html>
