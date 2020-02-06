@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>36. The Rest on Rest and Spread</title>
+  <meta name="description" content="36. The Rest on Rest and Spread">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>The Rest on Rest and Spread</h1>
+  <p>Section 13, Lecture 36</p>
+  <p>Check the console logs!</p>
+
+  <script>
+  const defaultColors = ['red', 'green'];
+  const userFavouriteColors = ['orange', 'yellow'];
+
+  const fallColors = ['fire red', 'fall orange'];
+
+  // ES5 - join the two arrays into one array
+  defaultColors.concat(userFavouriteColors);
+
+  // ES6 - Spread operator
+  // Create an empty array
+  // Using the spread operator we take the existing arrays and 'spread' them out
+  // so there is no inner array.
+  // Why use this approach? It's easier to add on multiple arrays
+  console.log([...fallColors, ...defaultColors, ...userFavouriteColors]);
+
+  // We can also easily add in more elements
+  console.log(['green', 'blue', ...fallColors, ...defaultColors, ...userFavouriteColors]);
+
+  // Another example with rest and spread together - function where we want to make sure we always get milk from our shopping list
+  function validateShoppingList(...items) {
+    if(items.indexOf('milk') < 0) {
+      return['milk', ...items];
+    }
+
+    return items;
+  }
+
+  console.log(validateShoppingList('oranges', 'bread', 'eggs'));
+  </script>
+</body>
+</html>
