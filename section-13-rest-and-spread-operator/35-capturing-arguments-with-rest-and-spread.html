@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>35. Capturing Arguments with Rest and Spread</title>
+  <meta name="description" content="35. Capturing Arguments with Rest and Spread">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Capturing Arguments with Rest and Spread</h1>
+  <p>Section 13, Lecture 35</p>
+  <p>Check the console logs!</p>
+
+  <script>
+  // ES5
+  // We would need to predefine multiple arguments. A bit of a hassle and not very flexible
+  function addNumbers(a,b,c,d,e) {
+      const numbers = [a,b,c,d,e];
+    return numbers.reduce(function(sum, number) {
+      return sum + number;
+    }, 0);
+
+    // ES6 - Rest operator
+    // The arguments list can be an unknown amount of arugments and puts them into an array (numbers)
+    function addNumbers(...numbers) {
+      return numbers.reduce(function(sum, number) {
+        return sum + number;
+      }, 0);
+    }
+
+    addNumbers(1,2,3,4,5);
+  </script>
+</body>
+</html>
