@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Coding Exercise 29: Many, Many Arguments</title>
+  <meta name="description" content="Coding Exercise 29: Many, Many Arguments">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Coding Exercise 29: Many, Many Arguments</h1>
+  <p>Refactor the following function to use the rest operator. Remember, an argument using the rest operator does *not* need to be called 'rest'.</p>
+  <p>Check the console logs!</p>
+
+  <script>
+    // Provided.
+    function product(a, b, c, d, e) {
+      var numbers = [a,b,c,d,e];
+
+      return numbers.reduce(function(acc, number) {
+        return acc * number;
+      }, 1)
+    }
+
+    // Solution
+    function product(...values) {
+      var numbers = values;
+      
+      return numbers.reduce(function(acc, number) {
+        return acc * number;
+      }, 1)
+    }
+
+  </script>
+</body>
+</html>
