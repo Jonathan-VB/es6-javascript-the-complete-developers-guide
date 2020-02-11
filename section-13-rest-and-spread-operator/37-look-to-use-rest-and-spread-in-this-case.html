@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>37. Look to Use Rest and Spread in This Case</title>
+  <meta name="description" content="37. Look to Use Rest and Spread in This Case">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Look to Use Rest and Spread in This Case</h1>
+  <p>Section 13, Lecture 37</p>
+  <p>Check the console logs!</p>
+
+  <script>
+  const MathLibrary = {
+    calculateProduct(...rest) {
+      console.log('Please use the multiply method instead')
+      return this.multiply(...rest);
+    },
+    multiply(a, b) {
+      return a * b;
+    }
+  }
+  </script>
+</body>
+</html>
