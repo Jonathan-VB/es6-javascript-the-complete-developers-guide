@@ -14,14 +14,13 @@
 
   <script>
     // Provided.
-    function join(array1, array2) {
-      return array1.concat(array2);
-
+    function unshift(array, a, b, c, d, e) {
+      return [a, b, c, d, e].concat(array);
     }
 
     // Solution
-    function join(array1, array2) {
-      return [...array1, ...array2]
+    function unshift(array, ...rest) {
+      return [...rest, ...array];
     }
 
   </script>
