@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Coding Exercise 30: Spreadin' Arrays</title>
+  <meta name="description" content="Coding Exercise 30: Spreadin' Arrays">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Coding Exercise 30: Spreadin' Arrays</h1>
+  <p>Refactor the following function to use the spread operator.</p>
+  <p>Check the console logs!</p>
+
+  <script>
+    // Provided.
+    function join(array1, array2) {
+      return array1.concat(array2);
+
+    }
+
+    // Solution
+    function join(array1, array2) {
+      return [...array1, ...array2]
+    }
+
+  </script>
+</body>
+</html>
