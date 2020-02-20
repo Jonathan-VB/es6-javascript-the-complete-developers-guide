@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>38. Goldmine of ES6: Destructuring</title>
+  <meta name="description" content="38. Goldmine of ES6: Destructuring">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Goldmine of ES6: Destructuring</h1>
+  <p>Section 13, Lecture 38</p>
+  <p>Check the console logs!</p>
+
+  <script>
+  //ES5
+  var expense = {
+    type: 'Business',
+    amount: '$45 USD'
+  };
+  // var type = expense.type;
+  // var amount = expense.amount;
+
+  // ES6
+  // This is not creating an object. When curly braces are used on the other side of the equals sign
+  // I want to declare a new variable called 'type' and I want it to reference expense.type property.
+  // same with amount.
+
+  // So we pull a property of {this} name from an object and that property will be assigned to a variable of that same name
+  const { type } = expense;
+  const { amount } = expense;
+
+  // With Destructuring, we can also combine many of these operations into a single lines
+  // This makes type = expense.type = Business
+  // and amount = expense.amount = $45 USD
+  const { type, amount } = expense;
+
+  // Common questions
+  // Q: Does the variable name have to match up to the property name?
+  // A: Yes! they must be identical.
+  // So we cant do const { myType, amount } = expense;
+
+  // Q: What happens if we reference a property that doesn't exist?
+  // A: it will just return as undefined. It wont throw an error
+
+  </script>
+</body>
+</html>
