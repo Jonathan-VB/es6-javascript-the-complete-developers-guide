@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>39. Destructuring Arguments Object</title>
+  <meta name="description" content="39. Destructuring Arguments Object">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Destructuring Arguments Object</h1>
+  <p>Section 13, Lecture 39</p>
+  <p>Check the console logs!</p>
+
+  <script>
+  var savedFiled = {
+    extension: 'jpg',
+    name: 'repost',
+    size: 14040
+  };
+
+  // ES5
+  // function fileSummary(file) {
+  //   return `The file ${file.name}.${file.extension} is of size ${file.size}`;
+  // }
+
+  // ES6
+  function fileSummary({ name, extension, size }) {
+    return `The file ${name}.${extension} is of size ${size}`;
+  }
+
+  console.log(fileSummary(savedFiled));
+  </script>
+</body>
+</html>
