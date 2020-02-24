@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>41. Destructuring Arrays and Objects *At the Same Time*</title>
+  <meta name="description" content="41. Destructuring Arrays and Objects *At the Same Time*">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Destructuring Arrays and Objects *At the Same Time*</h1>
+  <p>Section 13, Lecture 41</p>
+  <p>Check the console logs!</p>
+
+  <script>
+    const companies = [
+      { name: 'Google', location: 'Mountain View' },
+      { name: 'Facebook', location: 'Menlo Park' },
+      { name: 'Uber', location: 'San Francisco' }
+    ];
+
+    // ES5
+    var location = companies[0].location;
+    console.log(location);
+
+    // ES6
+    const [location] = companies;
+    location // { name: 'Google', location: 'Mountain View' }
+
+    const [{location}] = companies;
+    location // Mountain View'
+
+    // I nthis example we want to use Destructuring to gain access to the first location
+    const Google = {
+      loations: ['Mountain View', 'New York', 'London'];
+    }
+
+    // We know we want Google object
+    // const Google
+
+    // We want locations property and look into it
+    // const { locations } = Google;
+
+    // We want locations property and look into it and get the first element
+    // const { locations: [location] } = Google;
+    console.log(locations); // Mountain View
+  </script>
+</body>
+</html>
