@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>40. Destructuring Arrays</title>
+  <meta name="description" content="40. Destructuring Arrays">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Destructuring Arrays</h1>
+  <p>Section 13, Lecture 40</p>
+  <p>Check the console logs!</p>
+
+  <script>
+  const = companies = [
+    'Google',
+    'Facebook',
+    'Uber'
+  ];
+
+  // ES5
+  const firstCompany = companies[0]; // Google
+
+  // ES6
+  const [ name, name2, name3, name4 ] = companies;
+  console.log(name); // Google
+  console.log(name2); // Facebook
+  console.log(name3); // Uber
+  console.log(name4); // Undefined
+
+  // Rest example
+  const [ name, ...rest ];
+  console.log(rest); // ["Facebook", "Uber"]
+
+
+  </script>
+</body>
+</html>
