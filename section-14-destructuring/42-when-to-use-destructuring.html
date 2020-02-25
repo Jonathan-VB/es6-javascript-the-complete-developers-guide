@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>42. So...When to Use Destructuring?</title>
+  <meta name="description" content="42. So...When to Use Destructuring?">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>So...When to Use Destructuring?</h1>
+  <p>Section 14, Lecture 42</p>
+  <p>Check the console logs!</p>
+
+  <script>
+    // Original
+    function signup(username, password) {
+      // create new user
+    }
+    signup('username', 'password');
+
+
+    // Expanded
+    function signup(username, password, email, dateOfBirth, city) {
+      // create new user
+    }
+    signup('username', 'password', 'example@example.com', '1/1/1990', 'Dublin');
+
+
+    // Function arguments become difficult to remember the longer the arguments list gets...
+    // Especially when we try to use signup far down the file or in a different file.
+    function signup(username, password, email, dateOfBirth, city) {
+      // create new user
+    }
+
+    // other code
+    // other code
+    // other code
+    // other code
+    // other code
+    // other code
+    // other code
+    // other code
+
+    signup('username', 'password', 'example@example.com', '1/1/1990', 'Dublin');
+
+
+    // ES6 clean up
+    // With Destructuring properties, we dont need to worry about the order of arguments.
+    // We only need to remember we need a username, password... in any order.
+    // It would be very difficult to escape the act that we need a username, password.. when a user is signed up
+    // but we can remove a layer of complexity from needing to remember the correct order
+    function signup({ username, password, email, dateOfBirth, city }) {
+      // create new user
+    }
+
+    // We can mix up the order of the arguments, it doesn't matter as long as it matches the properties name from the user object.
+    function signup({ email, password, dateOfBirth, city, username }) {
+      // create new user
+    }
+
+    const user = {
+        username: 'myname',
+        password: 'mypass',
+        email: 'email@email.com',
+        dateOfBirth: '1/1/1990',
+        city: 'New York'
+    };
+    //instead of passing in a list of strings, we just pass in the whole user object
+    signup(user);
+  </script>
+</body>
+</html>
