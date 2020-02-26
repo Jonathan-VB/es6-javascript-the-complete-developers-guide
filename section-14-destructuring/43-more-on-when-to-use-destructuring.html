@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>43. More on When to Use Destructuring</title>
+  <meta name="description" content="43. More on When to Use Destructuring">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>43. More on When to Use Destructuring</h1>
+  <p>Section 14, Lecture 43</p>
+  <p>Check the console logs!</p>
+
+  <script>
+  // What we have
+    const points = [
+        [4, 5],
+        [10, 1],
+        [0, 40]
+    ];
+
+    // What we want
+    // [
+    //     { x: 4, y: 5 },
+    //     { x: 10, y: 1 },
+    //     { x: 0, y: 40 }
+    // ]
+
+    // Map over each pair in the array.
+    // But rather than do the Destructuring in the map helper on a new line, we can do it in the argument list
+    points.map(pair => {
+        const [ x, y ] = pair;
+    });
+
+    // pull off x and y so the arguments to this function are now the x and y value from each array on the points object
+    points.map(([ x, y ]) => {
+        // return an object with an x point and a y point!
+        return { x: x, y: y}; // {{"x":4,"y",5},...}
+    });
+
+    // To refactor the code a bit more; we have an identical key and value so we can use object literal syntax..
+    // It is at little bit tough to understnad a first but it is likely more legible than what we could have done with for loops.
+    points.map(([ x, y ]) => {
+        // return an object with an x point and a y point!
+        return { x, y } ; // {{"x":4,"y",5},...}
+    });
+  </script>
+</body>
+</html>
