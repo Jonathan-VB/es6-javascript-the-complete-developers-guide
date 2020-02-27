@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Coding Exercise 34: Recursion with Destructuring</title>
+    <meta name="description" content="Coding Exercise 34: Recursion with Destructuring">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <h1>Coding Exercise 34: Recursion with Destructuring</h1>
+    <p>Use array destructuring, recursion, and the rest/spread operators to create a function 'double' that will return a new array with all values inside of it multiplied by two. &nbsp;<strong class="redactor-inline-converted">Do not use any array helpers!</strong>&nbsp;Sure, the map, forEach, or reduce helpers would make this extremely easy but give it a shot the hard way anyways :)</p>
+    <p><strong class="redactor-inline-converted">Input:</strong></p>
+    <p><code>double([1,2,3])</code></p>
+    <p><strong>Output</strong></p>
+    <p><code>[2,4,6]</code></p>
+    <p>Hint: Don't forget that with recursion you must add a base case so you don't get an infinite call stack. &nbsp;For example, if 'const [ number, ...rest ] = numbers' and number is undefined do you need to keep walking through the array?<br></p>
+
+    <script>
+    // Provided
+    const numbers = [1, 2, 3];
+
+    function double() {
+
+    }
+
+    // Solution
+    const numbers = [1, 2, 3];
+
+    function double([first, ...rest]) {
+        if (rest.length === 0){
+          return [first*2];
+        } else {
+          return [first*2, ...double(rest)]
+        }
+    }
+
+    </script>
+</body>
+</html>
