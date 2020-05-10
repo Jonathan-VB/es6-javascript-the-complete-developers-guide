@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>45. Prototypal Inheritance</title>
+    <meta name="description" content="45. Prototypal Inheritance">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <h1>Prototypal Inheritance</h1>
+    <p>Section 15, Lecture 44</p>
+    <p>Check the console logs!</p>
+
+    <script>
+    //ES5 Prototypal Inheritance
+    // Constructor object
+    function Car(options) {
+        this.title = options.title;
+    }
+
+    // Add a method to the constructor (constructor function)
+    Car.prototype.drive = function() {
+        return 'vroom!';
+    }
+
+    // Toyota constructor which will inherit from the Car constructor
+    function Toyota(options) {
+        // Execute an initialisation that occurs in Car
+        Car.call(this, options);
+        this.color = options.color;
+    }
+
+    // Duplicate of Car prototype
+    Toyota.prototype = Object.create(Car.prototype);
+
+    // Add a constructor
+    Toyota.prototype.constructor = Toyota;
+
+    // Now we can add a method to Toyota's prototype
+    Toyota.prototype.honk = function() {
+        return 'beep';
+    }
+
+    const toyota = new Toyota({ color: 'red', title: 'Daily Driver' });
+
+    console.log(toyota); // { title, "Daily Driver", color:"red" }
+    console.log(toyota.honk()); // beep
+    console.log(toyota.drive()); // vroom
+    </script>
+</body>
+</html>
