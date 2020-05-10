@@ -1,18 +1,34 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>44. Introduction to Classes</title>
-  <meta name="description" content="44. Introduction to Classes">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <title>44. Introduction to Classes</title>
+    <meta name="description" content="44. Introduction to Classes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
-  <h1>Introduction to Classes</h1>
-  <p>Section 15, Lecture 44</p>
-  <p>Check the console logs!</p>
+    <h1>Introduction to Classes</h1>
+    <p>Section 15, Lecture 44</p>
+    <p>Check the console logs!</p>
 
-  <script>
-  </script>
+    <script>
+    //ES5 Basic object creation
+    // Constructor object
+    function Car(options) {
+        this.title = options.title;
+    }
+
+    // Add a method to the constructor (constructor function)
+    Car.prototype.drive = function() {
+        return 'vroom!';
+    }
+
+    // new keyword on the Car constructor to make a new car
+    const car = new Car({ title: 'Focus' });
+
+    console.log(car); // {"title":"Focus"}
+    console.log(car.drive); // vroom!
+    </script>
 </body>
 </html>
