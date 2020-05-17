@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Coding Exercise 35: Game Classes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <h1>Coding Exercise 35: Game Classes</h1>
+
+    <p>You are a game developer tasked with setting up some basic classes for a new game you are working on. &nbsp;Create a class called 'Monster'. &nbsp;In the constructor, you'll need to do some basic setup for Monster whenever they are created.&nbsp;</p>
+    <ul>
+        <li>Initialize the Monster's health to 100.</li>
+        <li>The constructor will be called with an 'options' object that has a 'name' property. &nbsp;Assign the 'name' to the Monster</li>
+    </ul>
+    <p>Check the console logs!</p>
+
+    <script>
+    // Provided
+    class Monster {
+
+    }
+
+    // Solution
+    class Monster {
+        constructor(options) {
+            this.health = 100;
+            this.name = options.name;
+        }
+    }
+
+    </script>
+</body>
+</html>
