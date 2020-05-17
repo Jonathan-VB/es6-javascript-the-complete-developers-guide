@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Coding Exercise 35: Game Classes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <h1>Coding Exercise 35: Game Classes</h1>
+
+    <p>Now that you have a monster created, create a subclass of the Monster called Snake. &nbsp;</p>
+    <ul>
+        <li>The Snake should have a 'bite' method. &nbsp;The only argument to this method is another instance of a Snake.</li>
+        <li>The instance of Snake that is passed in should have their health deducated by 10</li>
+    </ul>
+
+    <p>Check the console logs!</p>
+
+    <script>
+    // Provided
+    class Monster {
+        constructor(options) {
+            this.health = 100;
+            this.name = options.name;
+        }
+    }
+
+    class Snake {
+
+    }
+
+    // Solution
+    class Monster {
+        constructor(options) {
+            this.health = 100;
+            this.name = options.name;
+        }
+    }
+
+    class Snake extends Monster {
+        constructor(options) {
+            super(options);
+        }
+
+        bite(options) {
+            options.health -= 10;
+        }
+    }
+
+    </script>
+</body>
+</html>
