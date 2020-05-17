@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>47. Extending Behavior of Classes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <h1>Refactoring with Classes</h1>
+    <p>Section 15, Lecture 47</p>
+    <p>Check the console logs!</p>
+
+    <script>
+    //ES6 Classes
+    // Create the Car class object
+    class Car {
+        constructor(options) {
+            this.title = options.title;
+        }
+        drive() {
+            return "vroom";
+        }
+    }
+
+    // Create the Toyota class object
+    class Toyota extends Car {
+        constructor(options) {
+            super(options); // Car.constructor(options)
+            this.color = options.color;
+        }
+
+        honk() {
+            return "beep";
+        }
+    }
+
+    // Create an instance of Car in the car variable.
+    const car = new Car({ title: 'Toyota' });
+    console.log(car.drive()); // vroom
+    console.log(car); // { title:"Toyota" }
+
+    // Create an instance of Toyota in the toyota variable.
+    const toyota = new Toyota({ color: 'red', title: 'Daily Driver' });
+    console.log(toyota.honk()); // beep
+    console.log(toyota.drive()); // vroom
+    console.log(toyota); // { title, "Daily Driver", color:"red" }
+    </script>
+</body>
+</html>
