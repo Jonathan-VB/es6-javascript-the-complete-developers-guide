@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>51. Generators With a Short Story</title>
+    <meta name="description" content="54. A Practical Use of ES6 Generators">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <h1>54. A Practical Use of ES6 Generators</h1>
+    <p>Section 16, Lecture 54</p>
+    <p>Check the console logs!</p>
+
+    <script>
+    // We only want to iterate through the employees, not size or department
+    const engineeringTeam = {
+        size: 3,
+        department: 'Engineering',
+        lead: 'Jill',
+        manager: 'Alex',
+        engineer: 'Dave'
+    };
+
+    function* teamIterator(team) {
+        yield team.lead;
+        yield team.manager;
+        yield team.engineer;
+    }
+
+    const names = [];
+    for(let name of teamIterator(engineeringTeam)) {
+        name.push(names);
+    }
+
+    console.log(names); // ["Jill", "Alex", "Dave"]
+    </script>
+</body>
+</html>
