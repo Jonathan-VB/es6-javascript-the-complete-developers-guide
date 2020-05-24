@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>51. Generators With a Short Story</title>
+    <meta name="description" content="53. The Big Reveal on ES6 Generators">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <h1>The Big Reveal on ES6 Generators</h1>
+    <p>Section 16, Lecture 53</p>
+    <p>Check the console logs!</p>
+
+    <script>
+    // The big reveal: Generators work really well with for of loops!
+    // We can use generators to iterate through any data structure that we want, not just objects or arrays.
+
+    function* colors() {
+        yield 'red';
+        yield 'blue';
+        yield 'green';
+    }
+
+    const gen = colors();
+    gen.next(); // {"value":"red", "done":false}
+    gen.next(); // {"value":"blue", "done":false}
+    gen.next(); // {"value":"green", "done":false}
+    gen.next(); // {"done":true}
+
+    const myColors = [];
+    for(let color of colors()) {
+        myColors.push(color);
+    }
+    myColors; // ["red","blue","green"]
+    </script>
+</body>
+</html>
