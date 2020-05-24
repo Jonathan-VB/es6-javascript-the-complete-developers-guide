@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
     <title>51. Generators With a Short Story</title>
-    <meta name="description" content="51. Generators With a Short Story">
+    <meta name="description" content="52. Another Step in Our Generator Story">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
-    <h1>51. Generators With a Short Story</h1>
-    <p>Section 16, Lecture 51</p>
+    <h1>Another Step in Our Generator Story</h1>
+    <p>Section 16, Lecture 52</p>
     <p>Check the console logs!</p>
 
     <script>
@@ -26,8 +26,15 @@
         // STEP 6. re-enter at yield
         // Since we passed in .next('groceries') -> const stuffFromStore = 'groceries';
 
-        // STEP 7. walking back home
-        return stuffFromStore
+        // STEP 7. yield -> transition out of generator
+        // walking to laundry place
+        const cleanClothes = yield 'laundry';
+
+        // STEP 9.
+        // Execute code from yield
+
+        // walking back home
+        return [stuffFromStore, cleanClothes];
     }
 
     // stuff in the store
@@ -46,7 +53,11 @@
 
     // STEP 5. We re-enter the generator at the yield statement
     // leaving the store
-    gen.next('groceries'); // {"value":"groceries","done":true}
+    gen.next('groceries'); // {"value":"groceries","done":false}
+
+    // STEP 8. Re-enter genetor
+    // leave laundry place
+    gen.next('clean clothes'); // {"value":["groceries","clean clothes"],"done":true}
     </script>
 </body>
 </html>
