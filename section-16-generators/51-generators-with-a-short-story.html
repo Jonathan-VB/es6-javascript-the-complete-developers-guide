@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>51. Generators With a Short Story</title>
+    <meta name="description" content="51. Generators With a Short Story">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <h1>51. Generators With a Short Story</h1>
+    <p>Section 16, Lecture 51</p>
+    <p>Check the console logs!</p>
+
+    <script>
+    function* shopping() {
+        // stuff on the sidewalk
+
+        // STEP 2. Invoke the generator
+        // walking down the sidewalk
+
+        // STEP 3. yield -> transition out of generator
+        // go into the store with cash
+        const stuffFromStore = yield 'cash';
+
+        // STEP 6. re-enter at yield
+        // Since we passed in .next('groceries') -> const stuffFromStore = 'groceries';
+
+        // STEP 7. walking back home
+        return stuffFromStore
+    }
+
+    // stuff in the store
+
+    // Just calling shopping doesn't invoke the generator
+    const gen = shopping();
+
+    // STEP 1. The first .next() invokes the generator
+    // leaving our house
+    gen.next(); // {"value":"cash","done":false}
+
+    // STEP 4. Stuff happens outside of generator
+    // walked into store
+    // walking up and down store
+    // purchase stuff
+
+    // STEP 5. We re-enter the generator at the yield statement
+    // leaving the store
+    gen.next('groceries'); // {"value":"grceries","done":true}
+    </script>
+</body>
+</html>
