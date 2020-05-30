@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>58. Complexities of Symbol.Iterator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <h1>58. Complexities of Symbol.Iterator</h1>
+    <p>Section 16, Lecture 58</p>
+    <p>Check the console logs!</p>
+
+    <script>
+    const testingTeam = {
+        lead: "Amanda",
+        tester: "Bill",
+        [Symbol.iterator]: function* () {
+            yield this.lead;
+            yield this.tester;
+        }
+    }
+
+    const engineeringTeam = {
+        size: 3,
+        department: 'Engineering',
+        lead: 'Jill',
+        manager: 'Alex',
+        engineer: 'Dave',
+        [Symbol.iterator]: function* () {
+            yield this.lead;
+            yield this.manager;
+            yield this.engineer;
+            yield* this.testingTeam; // get all yields from testingTeam
+        }
+    };
+
+    const names = [];
+    for(let name of engineeringTeam) {
+        name.push(names);
+    }
+
+    console.log(names); // ["Jill", "Alex", "Dave", "Amanda", "Bill"]
+    </script>
+</body>
+</html>
