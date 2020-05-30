@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>60. More on Generators and Recursion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <h1>60. More on Generators and Recursion</h1>
+    <p>Section 16, Lecture 60</p>
+    <p>Check the console logs!</p>
+
+    <script>
+    // Setting up a node data tree
+    // Top level comments. Those comments can also have comments.
+    class Comment {
+        constructor(content, children) {
+            this.content = content;
+            this.children = children;
+        }
+
+        *[Symbol.iterator]() {
+            yield this.content;
+
+            // For every node of this.children, go into that child to see if it's iterable,
+            // and if it is iterable, iterate through it
+            for(let child of this.children) {
+                yield* child;
+            }
+        }
+    }
+
+    const children = [
+        new Comment('good comment', []),
+        new Comment('bad comment', []),
+        new Comment('meh', [])
+    ];
+
+    const tree = new Comment('Great post!', children);
+
+    const values = [];
+    for(let value of tree) {
+        values.push(value);
+    }
+    console.log(values); // ["Great post!", "good comment", "bad comment", "meh"]
+    </script>
+</body>
+</html>
