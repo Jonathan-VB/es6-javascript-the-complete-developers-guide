@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>58. Complexities of Symbol.Iterator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <h1>58. Complexities of Symbol.Iterator</h1>
+    <p>Section 16, Lecture 58</p>
+    <p>Check the console logs!</p>
+
+    <script>
+    // Setting up a tree
+    // Top level comments. Those comments can also have comments.
+    class Comment {
+        constructor(content, children) {
+            this.content = content;
+            this.children = children;
+        }
+    }
+
+    const children = [
+        new Comment('good comment', []),
+        new Comment('bad comment', []),
+        new Comment('meh', [])
+    ];
+
+    const tree = new Comment('Great post!', children);
+    console.log(tree); // {"content":"Great post!", "children":[{"content":"good comment", "children":[]}, {"content":"bad comment"} etc...}]}
+    </script>
+</body>
+</html>
