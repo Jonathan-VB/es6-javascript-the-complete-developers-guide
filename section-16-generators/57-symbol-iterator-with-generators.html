@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>57. Symbol.Iterator with Generators</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <h1>57. Symbol.Iterator with Generators</h1>
+    <p>Section 16, Lecture 57</p>
+    <p>Check the console logs!</p>
+
+    <script>
+    // Symbol.iterator is a tool that teaches objects how to respond to the for of loop
+    const testingTeam = {
+        lead: "Amanda",
+        tester: "Bill",
+        [Symbol.iterator]: function* () {
+            yield this.lead;
+            yield this.tester;
+        }
+    }
+
+    const engineeringTeam = {
+        size: 3,
+        department: 'Engineering',
+        lead: 'Jill',
+        manager: 'Alex',
+        engineer: 'Dave',
+        testingTeam: testingTeam
+    };
+
+    function* teamIterator(team) {
+        yield team.lead;
+        yield team.manager;
+        yield team.engineer;
+        yield* team.testingTeam; // get all yields from testingTeam
+    }
+
+    const names = [];
+    for(let name of teamIterator(engineeringTeam)) {
+        name.push(names);
+    }
+
+    console.log(names); // ["Jill", "Alex", "Dave", "Amanda", "Bill"]
+    </script>
+</body>
+</html>
