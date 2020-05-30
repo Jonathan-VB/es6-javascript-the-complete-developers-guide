@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>56. Delegation of Generators Continued</title>
+    <meta name="description" content="56. Delegation of Generators Continued">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <h1>56. Delegation of Generators Continued</h1>
+    <p>Section 16, Lecture 56</p>
+    <p>Check the console logs!</p>
+
+    <script>
+    const testingTeam = {
+        lead: "Amanda",
+        tester: "Bill"
+    }
+
+    const engineeringTeam = {
+        size: 3,
+        department: 'Engineering',
+        lead: 'Jill',
+        manager: 'Alex',
+        engineer: 'Dave',
+        testingTeam: testingTeam
+    };
+
+    function* teamIterator(team) {
+        yield team.lead;
+        yield team.manager;
+        yield team.engineer;
+
+        // Generator Delegation
+        // We call the testing team generator function, passing in the testingTeam property.
+        const testingTeamGenerator = testingTeamIterator(team.testingTeam);
+        yield* testingTeamGenerator;
+
+        // NOTE: yield* can also be read as "I'm in a generator but I have another generator that has a few yield statements you should care about"
+    }
+
+    function* testingTeamIterator(team) {
+        yield team.lead;
+        yield team.tester;
+    }
+
+    const names = [];
+    for(let name of teamIterator(engineeringTeam)) {
+        name.push(names);
+    }
+
+    console.log(names); // ["Jill", "Alex", "Dave", "Amanda", "Bill"]
+    </script>
+</body>
+</html>
