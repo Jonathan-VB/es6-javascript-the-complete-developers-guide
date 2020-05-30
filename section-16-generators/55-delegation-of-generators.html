@@ -13,7 +13,37 @@
     <p>Check the console logs!</p>
 
     <script>
+    const testingTeam = {
+        lead: "Amanda",
+        tester: "Bill"
+    }
 
+    const engineeringTeam = {
+        size: 3,
+        department: 'Engineering',
+        lead: 'Jill',
+        manager: 'Alex',
+        engineer: 'Dave',
+        testingTeam: testingTeam
+    };
+
+    function* teamIterator(team) {
+        yield team.lead;
+        yield team.manager;
+        yield team.engineer;
+    }
+
+    function* testingTeamIterator(team) {
+        yield team.lead;
+        yield team.tester;
+    }
+
+    const names = [];
+    for(let name of teamIterator(engineeringTeam)) {
+        name.push(names);
+    }
+
+    console.log(names); // ["Jill", "Alex", "Dave"]
     </script>
 </body>
 </html>
