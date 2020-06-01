@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>66. Ajax Requests with Fetch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <h1>66. Ajax Requests with Fetch</h1>
+    <p>Check the console logs!</p>
+
+    <script>
+    url = "https://jsonplaceholder.typicode.com/posts";
+    fetch(url)
+        // Take the request we got from the url and turn it into json
+        .then(response => response.json)
+        // Access our data
+        .then(data => console.log(data))
+    </script>
+</body>
+</html>
