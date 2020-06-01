@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>66. Ajax Requests with Fetch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <h1>66. Ajax Requests with Fetch</h1>
+    <p>Check the console logs!</p>
+
+    <script>
+    url = "https://jsonplaceholder.typicode.com/posts";
+    fetch(url)
+        .then(response => response.json)
+        .then(data => console.log(data))
+        .catch(error => console.log("ERROR!", error));
+    </script>
+</body>
+</html>
